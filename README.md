@@ -11,5 +11,7 @@ Each meter will be on it's own IP address the is defined setup_meters on row 317
 Each meter starts on it's own thread.
 
 ** Todo
-- Add start IP address into a constant or config file
+- Add meter start IP address into a constant or config file
+- Add devices to test into a config file
+- Add meter names into a config file
 - Add code to determine meter type rather hard code
