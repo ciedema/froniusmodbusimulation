@@ -54,7 +54,12 @@ class RepeatedTimer(object):
 
 
 
-
+#Shelly Model Type
+shellydict={
+            "SHEM-3":{"type":"GEN1","meters":3,"configurl":"/settings/emeter/","url":"/emeter/"},
+            "Plus1PM":{"type":"GEN2","meters":1,"configurl":"/rpc/Switch.GetConfig?id=","url":"/rpc/Switch.GetStatus?id="} 
+            
+           }
 
 #Meter IP Addresses
 meters = ["192.168.20.103","192.168.20.104","192.168.20.105","192.168.20.106","192.168.20.108"]
@@ -149,7 +154,7 @@ def update_meters():
             volt_int1,volt_int2=pack_float_32(voltage)
             ep_int1,ep_int2 = pack_float_32(power)
             var_int1,var_int2=pack_float_32(power*-1)
-            t1_int1,t1_int2=pack_float_32(totalimport)
+            ti_int1,ti_int2=pack_float_32(totalimport)
             exp_int1,exp_int2=pack_float_32(totalexport)
             #Quit if meter offline - needs to be cleaner (yes - effectivly a goto)
             if metersetup=="":
